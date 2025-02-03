@@ -1,7 +1,29 @@
-public class SecondQuarter implements Runnable{
-    MyThread myThread1 = new MyThread();
+public class FirstQuarter implements Runnable{
+    MyThread mainThread;
+    public FirstQuarter(MyThread mainThread) {
+        this.mainThread = mainThread;
+    }
+
+    int k = 0;
+    int l = 0;
     @Override
     public void run() {
 
+        for(Integer i : mainThread.getFirstQuarter()){
+
+
+            if(i % 2 == 0){
+                mainThread.evenList.add(k, i);
+                System.out.println(mainThread.evenList.get(k));
+                k++;
+            }
+            else{
+                mainThread.oddList.add(l, i);
+                //System.out.println(mainThread.oddList.get(l));
+                l++;
+
+            }
+
+        }
     }
 }
